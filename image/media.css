@@ -1,0 +1,62 @@
+/* Reflow Styling */
+header {
+    grid-area: header;
+}
+
+main {
+    grid-area: main;
+}
+
+section {
+    grid-area: section;
+}
+
+div {
+    grid-area: div;
+}
+
+.header,
+.section {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+}
+
+.grid {
+    grid-template-areas:
+        'header'
+        'home1'
+        'about'
+        'skill';
+    width: 100%;
+}
+
+.section {
+    width: calc(100% + 2rem);
+    margin: 0 -1rem;
+}
+
+main,
+section {
+    padding: 1rem;
+}
+
+@media all and (min-width: 576px) {
+    section{
+        grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+        margin-bottom: 1rem;
+    }
+
+    section{
+        padding-bottom: 0.25rem;
+    }
+}
+
+@media all and (min-width: 992px) {
+   main {
+        grid-template-areas:
+            'header header header'
+            'main main aside'
+            'footer footer footer';
+        grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1fr);
+    }
+}
